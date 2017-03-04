@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     onClick: () => {
-      window.navigator.vibrate(50);
+      window.navigator.vibrate(1);
     }
   }
 }
