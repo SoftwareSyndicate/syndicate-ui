@@ -1,45 +1,55 @@
 <template lang="pug">
 div#app
-  img(src="./assets/logo.png")
   ul
     li
-      h1
-        s-button
-          width 102px
-          height 38px
-          border-radius 4px
-          background-color #ffffff
-          box-shadow inset 0 -2px 0 0 rgba(187, 193, 214, 0.4)
-          border solid 1px #bcc1d7
+      h1 Button
+      s-button
+
+      h1 Input
+      s-input
+
+      h1 TextArea
+      s-textarea
+
+      h1 Select
+      s-select(:items="['item 1', 'item 2', 'item 3']")
 
 </template>
 
 <script>
+
 import Button from './components/button.vue'
+import Input from './components/input.vue'
+import TextArea from './components/textarea.vue'
+import Select from './components/select.vue'
+
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  created: function(){
-    console.log(this);
+  created:() => {
+
   },
   components: {
-    's-button': Button
+    's-button': Button,
+    's-input': Input,
+    's-textarea': TextArea,
+    's-select': Select,
   }
 }
 </script>
 
 <style lang="stylus">
+  
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
 
 
 h1, h2 
