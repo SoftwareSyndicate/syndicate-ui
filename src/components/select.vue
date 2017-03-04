@@ -62,6 +62,7 @@ export default {
   padding-left 20px
   position relative
   cursor pointer
+  user-select none
 
   .selected-item
     display flex

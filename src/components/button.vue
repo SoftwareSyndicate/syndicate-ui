@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     onClick: () => {
-      window.navigator.vibrate(1);
+
     }
   }
 }
@@ -38,6 +38,7 @@ export default {
    background-color #ffffff
    box-shadow inset 0 -2px 0 0 rgba(187, 193, 214, 0.4)
    border solid 1px #bcc1d7
+   user-select none
 
    &:hover
      box-shadow none

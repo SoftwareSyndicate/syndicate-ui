@@ -30,6 +30,7 @@ input.s-input
   padding 20px 20px 20px 20px
   width 100%
   min-width 100px
+  user-select none
 
   &:focus
     border 1px #9b59b6 solid

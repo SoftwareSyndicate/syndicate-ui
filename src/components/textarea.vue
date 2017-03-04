@@ -27,6 +27,7 @@ textarea.s-textarea
   width 100%
   min-width 100px
   min-height 100px
+  user-select none
 
   &:focus
     border 1px #9b59b6 solid
