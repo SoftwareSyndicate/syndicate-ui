@@ -12,7 +12,7 @@ export default {
     }
   },
   created: () => {
-    console.log(this.$style);
+
   }
 }
 </script>
