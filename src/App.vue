@@ -20,10 +20,10 @@ div#app
         span.info {{size}}
         s-input(:classes="[size]")
 
-      h3 Theme
-      div.themes(v-for="theme in themes")
-        span.info {{theme}}
-        s-input(:classes="[theme]")
+      h3 States
+      div.themes(v-for="state in states")
+        span.info {{state}}
+        s-input(:classes="[state]")
 
     div.component
       h1 TextArea
@@ -55,8 +55,9 @@ export default {
   name: 'app',
   data() {
     return {
-      sizes: ['sm', 'md', 'lg'],
-      themes: ['primary', 'secondary', 'tertiary'],
+      sizes: ['sm', 'default', 'lg'],
+      states: ['default', 'error', 'warning', 'good'],
+      themes: ['default', 'primary', 'secondary', 'tertiary'],
     }
   },
   created:() => {
@@ -72,6 +73,7 @@ export default {
 </script>
 
 <style lang="stylus">
+
   
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -99,7 +101,12 @@ h1, h2, h3
     h1, h3
       flex-basis 100%
 
+    .info
+      flex-basis 100%
+
     .sizes
+      display flex
+      flex-wrap wrap
       text-align center
       margin-right 2em
       margin-bottom 10px
@@ -109,10 +116,5 @@ h1, h2, h3
       margin-right 2em
       margin-bottom 10px
 
-
-
-.primary {
-
-}      
 
 </style>

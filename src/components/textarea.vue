@@ -9,7 +9,20 @@ export default {
     placeholder: {
       type: String,
       default: "title"
-    }
+    },
+    model: {
+      type: String,
+      default: ""
+    },
+    name: {
+      type: String,
+      default: ""
+    },
+    change: {
+      type: Function,
+      default: () => {}
+    },
+
   },
   created: () => {
 
@@ -18,7 +31,9 @@ export default {
 </script>
 
 <style lang="stylus">
-textarea.s-textarea
+@import '../theme.styl'
+  
+.s-textarea
   border-radius 2px
   border solid 1px #d6dae9
   outline none

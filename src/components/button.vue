@@ -24,12 +24,8 @@ export default {
 </script>
 
 <style lang="stylus">
-color = #787e98
-background-color = #fff
+@import '../theme.styl'
   
-primary-color = #fff
-primary-background-color = #3ed783
-    
 .s-button
   cursor pointer
   display flex
@@ -38,38 +34,75 @@ primary-background-color = #3ed783
   user-select none
   min-width 100px
   border-radius 4px
-  color color
-  background-color background-color
+  color #787e98
+  background-color #fff
   padding 20px
   box-shadow inset 0 -2px 0 0 rgba(187, 193, 214, 0.4)
   border solid 1px #bcc1d7
-
-  span
-    font-size 16px
-    font-weight 600
-    color color
+  font-size default-font-size
+  flex-basis 100%
+  font-weight 600
 
   &:hover
     box-shadow none
-    background-color darken(background-color, 1%)
+    background-color darken(@background-color, 1%)
 
   &:active
-    background-color darken(background-color, 4%)
+    background-color darken(@background-color, 4%)
 
+  //SIZES
   &.sm
     padding 12px 20px 12px 20px
     min-width 0px
-     
-    span
-      font-size 13px
-      font-weight 500
+    font-size sm-font-size
+    font-weight 500
 
+  &.lg
+    padding 30px
+    font-size lg-font-size
+    font-weight 700
+
+
+   //THEMES 
   &.primary
+    color primary-color
     background-color primary-background-color
-    box-shadow none
-    border none
-    span
-      color primary-color
+    box-shadow inset 0 -2px 0 0 darken(primary-background-color, 30%)
+
+    &:hover
+      box-shadow none
+      background-color darken(primary-background-color, 4%)
+
+    &:active
+      background-color darken(primary-background-color, 8%)
+
+  &.secondary
+    color secondary-color
+    background-color secondary-background-color
+    box-shadow inset 0 -2px 0 0 darken(secondary-background-color, 30%)
+
+    &:hover
+      box-shadow none
+      background-color darken(secondary-background-color, 4%)
+
+    &:active
+      background-color darken(secondary-background-color, 8%)
+
+
+
+  &.tertiary
+    color tertiary-color
+    background-color tertiary-background-color
+    box-shadow inset 0 -2px 0 0 darken(tertiary-background-color, 30%)
+
+    &:hover
+      box-shadow none
+      background-color darken(tertiary-background-color, 4%)
+
+    &:active
+      background-color darken(tertiary-background-color, 8%)
+
+
 
           
 </style>
