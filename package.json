@@ -11,7 +11,7 @@
   "dependencies": {
     "vue": "^2.2.1"
   },
-  "main": "src/main.js",
+  "main": "dist/build.js",
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",

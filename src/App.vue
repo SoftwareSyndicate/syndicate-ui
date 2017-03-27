@@ -1,16 +1,44 @@
 <template lang="pug">
 div#app
-  ul
-    li
+  div.components
+    div.component
       h1 Button
-      s-button
+      h3 Sizes
+      div.sizes(v-for="size in sizes")
+        span.info {{size}}
+        s-button(:classes="[size]")
 
+      h3 Theme
+      div.themes(v-for="theme in themes")
+        span.info {{theme}}
+        s-button(:classes="[theme]")
+
+    div.component
       h1 Input
-      s-input
+      h3 Sizes
+      div.sizes(v-for="size in sizes")
+        span.info {{size}}
+        s-input(:classes="[size]")
 
+      h3 Theme
+      div.themes(v-for="theme in themes")
+        span.info {{theme}}
+        s-input(:classes="[theme]")
+
+    div.component
       h1 TextArea
-      s-textarea
+      h3 Sizes
+      div.sizes(v-for="size in sizes")
+        span.info {{size}}
+        s-textarea(:classes="[size]")
 
+      h3 Theme
+      div.themes(v-for="theme in themes")
+        span.info {{theme}}
+        s-textarea(:classes="[theme]")
+
+
+    div.component
       h1 Select
       s-select(:items="['item 1', 'item 2', 'item 3']")
 
@@ -27,7 +55,8 @@ export default {
   name: 'app',
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      sizes: ['sm', 'md', 'lg'],
+      themes: ['primary', 'secondary', 'tertiary'],
     }
   },
   created:() => {
@@ -52,21 +81,38 @@ export default {
   margin-top: 20px;
 
 
-h1, h2 
-  font-weight: normal;
+h1, h2, h3
+  margin-top 0px
+  margin-bottom 20px
+  font-weight normal
+
+.components
+  display flex
+  flex-wrap wrap
+
+  .component
+    display flex
+    flex-wrap wrap
+    flex-basis 100%
+    margin-bottom 30px
+
+    h1, h3
+      flex-basis 100%
+
+    .sizes
+      text-align center
+      margin-right 2em
+      margin-bottom 10px
+      
+    .themes
+      text-align center
+      margin-right 2em
+      margin-bottom 10px
 
 
-ul 
-  list-style-type: none;
-  padding: 0;
 
+.primary {
 
-li 
-  display: inline-block;
-  margin: 0 10px;
-
-
-a 
-  color: #42b983;
+}      
 
 </style>

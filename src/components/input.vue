@@ -1,5 +1,5 @@
 <template lang="pug">
-    input.s-input(:placeholder="placeholder", :type="type")
+input.s-input(:placeholder="placeholder",  :type="type", :value="model", @input="change", :name='name')
 </template>
 
 <script>
@@ -13,11 +13,23 @@ export default {
     type: {
       type: String,
       default: "text"
-    }
+    },
+    model: {
+      type: String,
+      default: ""
+    },
+    name: {
+      type: String,
+      default: ""
+    },
+    change: {
+      type: Function,
+      default: () => {}
+    },
   },
-  created: () => {
-
-  }
+  created(){
+    console.log(this.$style)
+  },
 }
 </script>
 
