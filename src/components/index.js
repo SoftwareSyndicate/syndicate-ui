@@ -1,0 +1,6 @@
+export {default as Button} from './button.vue'
+export {default as Input} from './input.vue'
+export {default as TextArea} from './textarea.vue'
+export {default as Select} from './select.vue'
+export {default as Nav} from './nav.vue'
+export {default as Tag} from './tag.vue'

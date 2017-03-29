@@ -32,7 +32,6 @@ export default {
   align-items center
   justify-content center
   user-select none
-  min-width 100px
   border-radius 4px
   color #787e98
   background-color #fff
@@ -42,6 +41,7 @@ export default {
   font-size default-font-size
   flex-basis 100%
   font-weight 600
+  white-space nowrap
 
   &:hover
     box-shadow none
@@ -53,7 +53,6 @@ export default {
   //SIZES
   &.sm
     padding 12px 20px 12px 20px
-    min-width 0px
     font-size sm-font-size
     font-weight 500
 

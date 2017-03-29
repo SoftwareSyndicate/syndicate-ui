@@ -32,7 +32,7 @@ export default {
     },
   },
   created(){
-    console.log(this.$style)
+
   },
 }
 </script>
@@ -41,7 +41,7 @@ export default {
   
 @import '../theme.styl'
   
-input.s-input
+.s-input
   border-radius 2px
   border solid 1px #d6dae9
   outline none
