@@ -1,3 +1,6 @@
 export {default as TypographyPage} from './TypographyPage.vue'
 export {default as ButtonPage} from './ButtonPage.vue'
 export {default as InputPage} from './InputPage.vue'
+export {default as TextAreaPage} from './TextAreaPage.vue'
+export {default as SelectPage} from './SelectPage.vue'
+export {default as TagPage} from './TagPage.vue'

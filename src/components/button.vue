@@ -51,16 +51,26 @@ export default {
     background-color darken(@background-color, 4%)
 
   //SIZES
-  &.sm
+  &.xs
+    padding 6px 10px
+    font-size sm-font-size
+    font-weight 400
+
+  
+  &.s
     padding 12px 20px 12px 20px
     font-size sm-font-size
     font-weight 500
 
-  &.lg
-    padding 30px
+  &.l
+    padding 20px 30px
     font-size lg-font-size
     font-weight 700
 
+  &.xl
+    padding 30px 40px
+    font-size lg-font-size
+    font-weight 700
 
    //THEMES 
   &.primary

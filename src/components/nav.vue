@@ -10,7 +10,7 @@ div.nav
         h3 {{item.name}}
       
       div.sub-item-container(v-for="sub_item in item.sub_items")
-        div.sub-item
+        router-link.sub-item(:to='{name: sub_item.route.name}' tag="div")
           img(alt="icon" src="http://icons.iconarchive.com/icons/danieledesantis/playstation-flat/512/playstation-square-dark-icon.png")
           span {{sub_item.name}}
       
@@ -36,7 +36,7 @@ export default {
 
 nav-height = 60px
 nav-background-color = #f6f8ff
-
+nav-box-shadow-color = #a2a3a7
 .nav
   width 100%
   height 100%
@@ -65,6 +65,7 @@ nav-background-color = #f6f8ff
     
     .item-container
       flex-basis 100%
+      margin-bottom 2em
       
       .item-header
         border-bottom 1px solid darken(nav-background-color, 10%)
@@ -77,12 +78,27 @@ nav-background-color = #f6f8ff
         padding-bottom 7px
 
       .sub-item-container
-        padding 7px 14px
+        padding 7px 28px 7px 14px
         
+          
         .sub-item
           display flex
           align-items center
-        
+          opacity 0.6
+          padding 7px 5px
+          cursor pointer
+          transition all .3s ease-in-out
+          
+          &.router-link-active
+            box-shadow 0 1px 0 0 nav-box-shadow-color
+            background-color  darken(nav-background-color, 15%)
+            border-radius 1px
+
+          &:hover
+            box-shadow 0 1px 0 0 nav-box-shadow-color
+            background-color  darken(nav-background-color, 15%)
+            border-radius 1px
+                        
           img
             width 16px
             height 16px

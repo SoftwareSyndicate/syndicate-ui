@@ -9,67 +9,14 @@ div#app
       // breadcrumbs
 
     div.view-container
-      router-view.vue
-
-      
-  // div.components
-  //   div.component
-  //     h1 Button
-  //     h3 Sizes
-  //     div.sizes(v-for="size in sizes")
-  //       span.info {{size}}
-  //       s-button(:classes="[size]")
-
-  //     h3 Theme
-  //     div.themes(v-for="theme in themes")
-  //       span.info {{theme}}
-  //       s-button(:classes="[theme]")
-
-  //   div.component
-  //     h1 Input
-  //     h3 Sizes
-  //     div.sizes(v-for="size in sizes")
-  //       span.info {{size}}
-  //       s-input(:classes="[size]")
-
-  //     h3 States
-  //     div.themes(v-for="state in states")
-  //       span.info {{state}}
-  //       s-input(:classes="[state]")
-
-  //   div.component
-  //     h1 TextArea
-  //     h3 Sizes
-  //     div.sizes(v-for="size in sizes")
-  //       span.info {{size}}
-  //       s-textarea(:classes="[size]")
-
-  //     h3 Theme
-  //     div.themes(v-for="theme in themes")
-  //       span.info {{theme}}
-  //       s-textarea(:classes="[theme]")
-
-
-  //   div.component
-  //     h1 Select
-  //     s-select(:items="['item 1', 'item 2', 'item 3']")
+      transition(name="fade", mode="out-in")
+        router-view.vue
 
 </template>
 
 <script>
-
-import * as ui from './components'
-
 export default {
   name: 'app',
-  components: {
-    's-nav': ui.Nav,
-    's-button': ui.Button,
-    's-input': ui.Input,
-    's-textarea': ui.TextArea,
-    's-select': ui.Select,
-    's-tag': ui.Tag,
-  },
   data() {
     return {
       sizes: ['sm', 'default', 'lg'],
@@ -92,6 +39,35 @@ export default {
             name: "Input",
             route: {
               name: 'input',
+            }
+          },
+          {
+            name: "TextArea",
+            route: {
+              name: 'textarea',
+            }
+          },
+          {
+            name: "Select",
+            route: {
+              name: 'select',
+            }
+          },
+          {
+            name: "Tag",
+            route: {
+              name: 'tag',
+            }
+          },
+        ]
+      },
+      {
+        name: "Typography",
+        sub_items: [
+          {
+            name: "All",
+            route: {
+              name: 'typography',
             }
           },
         ]
@@ -128,7 +104,14 @@ body
     .breadcrumbs-container
       flex-basis 100%
 
+    .view-container
+      flex-basis 100%
 
+      .fade-enter-active, .fade-leave-active
+        transition all .2s ease
+
+      .fade-enter, .fade-leave-active
+        opacity 0
 
       
 h1, h2, h3, h4, h5, h6

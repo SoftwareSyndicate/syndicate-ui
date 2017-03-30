@@ -1,27 +1,27 @@
 <template lang="pug">
-div#input-page
+div#tag-page
   div.header
-    h1 Inputs
+    h1 Tags
 
   div.body
     div.row
       h3 Sizes
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
-        s-input(title="button", :classes='[size]')
+        s-tag(title="button", :classes='[size]')
 
     div.row
       h3 Themes
       div.component-container(v-for="theme in themes")
         span {{theme ? theme : 'default'}}
-        s-input(title="button", :classes='[theme]')
+        s-tag(title="button", :classes='[theme]')
   
 </template>
 
 <script>
 
 export default {
-  name: 'InputPage',
+  name: 'TagPage',
   data(){
     return {
       sizes: ['xs', 's', '', 'l', 'xl'],
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style lang="stylus">
-#input-page
+#tag-page
   padding 1em
   display flex
   flex-wrap wrap
@@ -62,6 +62,6 @@ export default {
         padding 1em
         justify-content center
 
-        .s-input
+        .s-tag
           margin-top 10px
 </style>

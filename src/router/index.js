@@ -26,5 +26,21 @@ export default new Router({
       name: 'input',
       component: pages.InputPage,
     },
+    {
+      path: '/components/textarea',
+      name: 'textarea',
+      component: pages.TextAreaPage,
+    },
+    {
+      path: '/components/select',
+      name: 'select',
+      component: pages.SelectPage,
+    },
+    {
+      path: '/components/tag',
+      name: 'tag',
+      component: pages.TagPage,
+    },
+
   ]
 });

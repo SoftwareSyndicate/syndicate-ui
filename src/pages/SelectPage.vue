@@ -1,38 +1,39 @@
 <template lang="pug">
-div#input-page
+div#select-page
   div.header
-    h1 Inputs
+    h1 Select
 
   div.body
     div.row
       h3 Sizes
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
-        s-input(title="button", :classes='[size]')
+        s-select(:classes='[size]', :items="items")
 
     div.row
       h3 Themes
       div.component-container(v-for="theme in themes")
         span {{theme ? theme : 'default'}}
-        s-input(title="button", :classes='[theme]')
+        s-select(:classes='[theme]', :items="items")
   
 </template>
 
 <script>
 
 export default {
-  name: 'InputPage',
+  name: 'SelectPage',
   data(){
     return {
       sizes: ['xs', 's', '', 'l', 'xl'],
       themes: ['', 'primary', 'positive', 'negative', 'warning'],
+      items: ['item 1', 'item 2', 'another item']
     }
   }
 }
 </script>
 
 <style lang="stylus">
-#input-page
+#select-page
   padding 1em
   display flex
   flex-wrap wrap
@@ -62,6 +63,6 @@ export default {
         padding 1em
         justify-content center
 
-        .s-input
+        .s-select
           margin-top 10px
 </style>
