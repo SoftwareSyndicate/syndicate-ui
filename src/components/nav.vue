@@ -49,6 +49,7 @@ nav-box-shadow-color = #a2a3a7
     height nav-height
     border-bottom solid 1px #e7eaf3
     margin-bottom 60px
+    background-color darken(nav-background-color, 5%)
 
     .logo
       width 24px
