@@ -42,7 +42,6 @@ export default {
 
 <style lang="stylus">
 #typography-page
-  padding 1em
   display flex
   flex-wrap wrap
   

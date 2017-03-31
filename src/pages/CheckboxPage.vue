@@ -1,38 +1,31 @@
 <template lang="pug">
-div#textarea-page
+div#checkbox-page
   div.header
-    h1 TextArea
+    h1 Checkbox
 
   div.body
     div.row
       h3 Sizes
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
-        s-textarea(title="button", :classes='[size]')
-
-    div.row
-      h3 Themes
-      div.component-container(v-for="theme in themes")
-        span {{theme ? theme : 'default'}}
-        s-textarea(title="button", :classes='[theme]')
-  
+        s-checkbox(title="button", :classes='[size]')
+          
 </template>
 
 <script>
 
 export default {
-  name: 'TextAreaPage',
+  name: 'CheckboxPage',
   data(){
     return {
       sizes: ['xs', 's', '', 'l', 'xl'],
-      themes: ['', 'primary', 'positive', 'negative', 'warning'],
     }
-  }
+  },
 }
 </script>
 
 <style lang="stylus">
-#textarea-page
+#checkbox-page
   display flex
   flex-wrap wrap
   
@@ -56,11 +49,10 @@ export default {
         flex-basis 100%
 
       .component-container
-        display flex
-        flex-wrap wrap
         padding 1em
-        justify-content center
+        text-align center
 
-        .s-textarea
+        .s-checkbox
           margin-top 10px
+    
 </style>

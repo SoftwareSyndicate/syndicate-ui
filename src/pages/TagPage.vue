@@ -33,7 +33,6 @@ export default {
 
 <style lang="stylus">
 #tag-page
-  padding 1em
   display flex
   flex-wrap wrap
   

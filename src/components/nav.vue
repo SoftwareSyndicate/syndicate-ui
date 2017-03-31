@@ -5,7 +5,7 @@ div.nav
     span.brand Syndicate UI
     
   div.nav-items
-    div.item-container(v-for="item in nav_items")
+    div.item-container(v-for="item in items")
       div.item-header
         h3 {{item.name}}
       
@@ -17,16 +17,10 @@ div.nav
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+
 export default {
   name: 's-nav',
-  computed: mapGetters ({
-    nav_items: 'nav_items',
-    active_nav_item: 'active_nav_item' 
-  }),
-  created(){
-    console.log(this.nav_items);
-  }
+  props: ['items']
 }
 </script>
 

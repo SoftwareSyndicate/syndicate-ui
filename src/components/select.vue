@@ -6,7 +6,7 @@
 
     transition(name="open", mode="out-in")
       div.items(v-if="open")
-        div.item(v-for="item in items", @click="model = item")
+        div.item(v-for="item in items", @click="onSelect(item)")
           span {{item}}
           
 
@@ -32,6 +32,10 @@ export default {
       type: String,
       default: ""
     },
+    onSelect: {
+      type: Function,
+      default: () => {}
+    }
   },
   data() {
     return {

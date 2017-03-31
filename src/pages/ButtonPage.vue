@@ -27,13 +27,12 @@ export default {
       sizes: ['xs', 's', '', 'l', 'xl'],
       themes: ['', 'primary', 'positive', 'negative', 'warning'],
     }
-  }
+  },
 }
 </script>
 
 <style lang="stylus">
 #button-page
-  padding 1em
   display flex
   flex-wrap wrap
   

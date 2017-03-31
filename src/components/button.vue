@@ -32,16 +32,17 @@ export default {
   align-items center
   justify-content center
   user-select none
-  border-radius 4px
   color #787e98
   background-color #fff
-  padding 20px
-  box-shadow inset 0 -2px 0 0 rgba(187, 193, 214, 0.4)
+  border-radius 3px
   border solid 1px #bcc1d7
-  font-size default-font-size
-  flex-basis 100%
-  font-weight 600
+  font-size 13px
+  font-weight 500
   white-space nowrap
+  padding 10px 18px
+
+  span
+    line-height 1em
 
   &:hover
     box-shadow none
@@ -52,25 +53,26 @@ export default {
 
   //SIZES
   &.xs
-    padding 6px 10px
-    font-size sm-font-size
+    padding 6px 8px
+    font-size 10px
     font-weight 400
-
   
   &.s
-    padding 12px 20px 12px 20px
-    font-size sm-font-size
+    padding 7px 10px
+    font-size 12px
     font-weight 500
 
   &.l
-    padding 20px 30px
-    font-size lg-font-size
-    font-weight 700
+    padding 14px 32px
+    font-size 14px
+    font-weight 600
+
 
   &.xl
-    padding 30px 40px
-    font-size lg-font-size
-    font-weight 700
+    padding 18px 44px
+    font-size 16px
+    font-weight 600
+
 
    //THEMES 
   &.primary

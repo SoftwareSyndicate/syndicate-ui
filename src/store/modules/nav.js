@@ -1,36 +1,68 @@
-import * as types from '../mutation-types'
-
 // initial state
 const state = {
-  nav_items: [],
+  nav_items: [
+    {
+      name: "Components",
+      sub_items: [
+        {
+          name: "Button",
+          route: {
+            name: 'button',
+          }
+        },
+        {
+          name: "Input",
+          route: {
+            name: 'input',
+          }
+        },
+        {
+          name: "TextArea",
+          route: {
+            name: 'textarea',
+          }
+        },
+        {
+          name: "Select",
+          route: {
+            name: 'select',
+          }
+        },
+        {
+          name: "Tag",
+          route: {
+            name: 'tag',
+          }
+        },
+        {
+          name: "Checkbox",
+          route: {
+            name: 'checkbox',
+          }
+        },
+      ]
+    },
+    {
+      name: "Typography",
+      sub_items: [
+        {
+          name: "All",
+          route: {
+            name: 'typography',
+          }
+        },
+      ]
+    },
+  ],
   nav_active_item: {}
 }
 
 // getters
 const getters = {
   nav_items: state => state.nav_items,
-  nav_active_item: state => {
-    return state.nav_items.find((item)=>{
-      return item.route.name === state.route.name
-    })
-  }
-}
-
-// actions
-const actions = {}
-
-// mutations
-const mutations = {
-  [types.NAV_SET_ITEMS] (state, { nav_items }) {
-    console.log(nav_items);
-    console.log(state);
-    state.nav_items = nav_items
-  },
 }
 
 export default {
   state,
   getters,
-  actions,
-  mutations
 }

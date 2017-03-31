@@ -34,7 +34,6 @@ export default {
 
 <style lang="stylus">
 #select-page
-  padding 1em
   display flex
   flex-wrap wrap
   

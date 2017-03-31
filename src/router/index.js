@@ -9,6 +9,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'components',
       redirect: '/typography' 
     },
     {
@@ -40,6 +41,11 @@ export default new Router({
       path: '/components/tag',
       name: 'tag',
       component: pages.TagPage,
+    },
+    {
+      path: '/components/checkbox',
+      name: 'checkbox',
+      component: pages.CheckboxPage,
     },
 
   ]

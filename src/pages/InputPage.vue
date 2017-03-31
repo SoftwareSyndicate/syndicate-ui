@@ -8,7 +8,7 @@ div#input-page
       h3 Sizes
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
-        s-input(title="button", :classes='[size]')
+        s-input(placeholder="placeholder", :classes='[size]')
 
     div.row
       h3 Themes
@@ -33,7 +33,6 @@ export default {
 
 <style lang="stylus">
 #input-page
-  padding 1em
   display flex
   flex-wrap wrap
   

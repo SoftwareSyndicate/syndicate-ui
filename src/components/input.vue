@@ -43,25 +43,41 @@ export default {
   
 .s-input
   border-radius 2px
-  border solid 1px #d6dae9
+  border solid 0.5px #d6dae9
   outline none
   font-size default-font-size
-  padding 20px
   user-select none
-  flex-basis 100% 
+  flex-basis 100%
+  font-size 13px
+  padding 11px 20px
+  height 32px
 
+
+  &:disabled
+    background-color #f6f8ff
+  
   &:focus
     border 1px primary-theme-color solid
     transition border .5s
 
   // Sizes
-  &.sm
-    font-size sm-font-size
-    padding 10px
+  &.xs
+    font-size 11px
+    padding 5px 20px
+  
+  &.s
+    font-size 12px
+    padding 6px 20px
 
-  &.lg
-    font-size lg-font-size
-    padding 30px
-    
+  &.l
+    font-size 14px
+    padding 15px 20px
+
+
+  &.xl
+    font-size 15px
+    padding 20px 20px
+
+        
 </style>
                                       

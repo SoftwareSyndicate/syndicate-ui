@@ -1,12 +1,11 @@
 <template lang="pug">
 div#app
   div.nav-container
-    s-nav
+    s-nav(:items="nav_items")
 
   div.content-container
     div.breadcrumbs-container
-      p breadcrumbs    
-      // breadcrumbs
+      s-breadcrumbs(:crumbs="crumbs")
 
     div.view-container
       transition(name="fade", mode="out-in")
@@ -15,65 +14,17 @@ div#app
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'app',
   data() {
-    return {
-      sizes: ['sm', 'default', 'lg'],
-      states: ['default', 'error', 'warning', 'good'],
-      themes: ['default', 'primary', 'secondary', 'tertiary'],
-    }
+    return {}
   },
+  computed: mapGetters ({
+    nav_items: 'nav_items',
+    crumbs: 'crumbs',
+  }),
   created(){
-    let nav_items = [
-      {
-        name: "Components",
-        sub_items: [
-          {
-            name: "Button",
-            route: {
-              name: 'button',
-            }
-          },
-          {
-            name: "Input",
-            route: {
-              name: 'input',
-            }
-          },
-          {
-            name: "TextArea",
-            route: {
-              name: 'textarea',
-            }
-          },
-          {
-            name: "Select",
-            route: {
-              name: 'select',
-            }
-          },
-          {
-            name: "Tag",
-            route: {
-              name: 'tag',
-            }
-          },
-        ]
-      },
-      {
-        name: "Typography",
-        sub_items: [
-          {
-            name: "All",
-            route: {
-              name: 'typography',
-            }
-          },
-        ]
-      },
-    ]
-    this.$store.commit("NAV_SET_ITEMS", {nav_items})
   }
 }
 </script>
@@ -106,6 +57,7 @@ body
 
     .view-container
       flex-basis 100%
+      padding 1em
 
       .fade-enter-active, .fade-leave-active
         transition all .2s ease
