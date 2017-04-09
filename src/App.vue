@@ -6,7 +6,6 @@ div#app
   div.content-container
     div.breadcrumbs-container
       s-breadcrumbs(:crumbs="crumbs")
-
     div.view-container
       transition(name="fade", mode="out-in")
         router-view.vue
@@ -69,34 +68,5 @@ body
 h1, h2, h3, h4, h5, h6
   margin 0px
   font-weight normal
-
-.components
-  display flex
-  flex-wrap wrap
-
-  .component
-    display flex
-    flex-wrap wrap
-    flex-basis 100%
-    margin-bottom 30px
-
-    h1, h3
-      flex-basis 100%
-
-    .info
-      flex-basis 100%
-
-    .sizes
-      display flex
-      flex-wrap wrap
-      text-align center
-      margin-right 2em
-      margin-bottom 10px
-      
-    .themes
-      text-align center
-      margin-right 2em
-      margin-bottom 10px
-
 
 </style>

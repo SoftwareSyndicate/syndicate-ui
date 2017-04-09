@@ -1,5 +1,5 @@
 <template lang="pug">
-textarea.s-textarea
+textarea.s-textarea(:placeholder="placeholder", :value="model", @input="change", :name='name', :class="classes")
 </template>
 
 <script>
@@ -8,7 +8,7 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: "title"
+      default: ""
     },
     model: {
       type: String,
@@ -22,7 +22,10 @@ export default {
       type: Function,
       default: () => {}
     },
-
+    classes: {
+      type: Array,
+      default: () => []
+    },
   },
   created: () => {
 
@@ -45,7 +48,7 @@ export default {
   user-select none
 
   &:focus
-    border 1px #9b59b6 solid
+    border 1px primary-theme-color solid
     transition border .5s
     
 </style>

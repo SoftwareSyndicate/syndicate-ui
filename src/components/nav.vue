@@ -1,8 +1,8 @@
 <template lang="pug">
 div.nav
   div.nav-header
-    img.logo(alt="logo", src="http://www.clipartkid.com/images/141/transparent-peace-symbol-2-cnd-logo-wordpress-peacesymbol-org-ALtC6a-clipart.png")
-    span.brand Syndicate UI
+    img.logo(alt="logo", :src="logo")
+    span.brand {{brand}}
     
   div.nav-items
     div.item-container(v-for="item in items")
@@ -20,7 +20,20 @@ div.nav
 
 export default {
   name: 's-nav',
-  props: ['items']
+  props: {
+    items: {
+      type: Array,
+      default: []
+    },
+    brand: {
+      type: String,
+      default: "Brand"
+    },
+    logo: {
+      type: String,
+      default: "http://www.clipartkid.com/images/141/transparent-peace-symbol-2-cnd-logo-wordpress-peacesymbol-org-ALtC6a-clipart.png"
+    }
+  }
 }
 </script>
 
@@ -28,22 +41,36 @@ export default {
   
 @import '../theme.styl'
 
+
 nav-height = 60px
-nav-background-color = #f6f8ff
+nav-header-background-color = #2f3a48
+nav-brand-color = #fafbff
+nav-background-color = #3c4858
 nav-box-shadow-color = #a2a3a7
+
+item-header-color = #d9e6ff
+item-header-border-bottom = solid 0.5px #293441
+
+nav-item-color = rgba(236, 239, 249, 0.91)
+nav-item-background-color-active = #99a6cc
+nav-item-box-shadow-active =  0 1px 0 0 #2f3a48
+nav-item-color-active =  #fff
+
+  
 .nav
   width 100%
   height 100%
   background-color nav-background-color
+  border solid 0.5px #293441
 
   .nav-header
     display flex
     flex-basis 100%
     align-items center
-    height nav-height
-    border-bottom solid 1px #e7eaf3
-    margin-bottom 60px
-    background-color darken(nav-background-color, 5%)
+    height nav-height - 2px
+    background-color nav-header-background-color
+    box-shadow 0 1px 2px 0 rgba(60, 72, 88, 0.2)
+    border solid 0.5px #293441
 
     .logo
       width 24px
@@ -51,20 +78,23 @@ nav-box-shadow-color = #a2a3a7
       margin-right 20px
       
     .brand
+      color nav-brand-color
       font-size 1em
       font-weight bold
 
   .nav-items
+    padding-top 60px
     display flex
     flex-wrap wrap
-    
+      
     .item-container
       flex-basis 100%
       margin-bottom 2em
       
       .item-header
-        border-bottom 1px solid darken(nav-background-color, 10%)
+        border-bottom item-header-border-bottom
         margin-bottom 7px
+        color item-header-color
       
       h3
         padding-left 14px
@@ -79,20 +109,23 @@ nav-box-shadow-color = #a2a3a7
         .sub-item
           display flex
           align-items center
-          opacity 0.6
           padding 7px 5px
           cursor pointer
           transition all .3s ease-in-out
+          font-weight 600
+          color nav-item-color
           
           &.router-link-active
-            box-shadow 0 1px 0 0 nav-box-shadow-color
-            background-color  darken(nav-background-color, 15%)
-            border-radius 1px
+            box-shadow nav-item-box-shadow-active
+            background-color nav-item-background-color-active
+            color nav-item-color-active
+            border-radius 2px
 
           &:hover
-            box-shadow 0 1px 0 0 nav-box-shadow-color
-            background-color  darken(nav-background-color, 15%)
-            border-radius 1px
+            box-shadow nav-item-box-shadow-active
+            background-color  nav-item-background-color-active
+            color nav-item-color-active
+            border-radius 2px
                         
           img
             width 16px
@@ -100,7 +133,7 @@ nav-box-shadow-color = #a2a3a7
             margin-right 16px
 
           span
-            font-size 14px
+            font-size 12px
     
 </style>
                                       

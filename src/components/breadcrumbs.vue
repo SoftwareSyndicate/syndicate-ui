@@ -3,7 +3,9 @@ div.breadcrumbs
   div.crumbs
     div.crumb(v-for="crumb in crumbs")
       router-link(:to="crumb.route") {{crumb.name}}
-    
+
+  div.actions-container    
+    slot(name="actions")
 </template>
 
 <script>
@@ -42,4 +44,9 @@ breadcrumbs-color = #fff
         margin-right 20px
         text-decoration none
         color breadcrumbs-color
+
+  .actions-container
+    margin-left auto
+    margin-right 1em
+        
 </style>
