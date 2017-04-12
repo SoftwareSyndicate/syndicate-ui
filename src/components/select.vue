@@ -1,5 +1,6 @@
 <template lang="pug">
   div.s-select(@click="open = !open")
+    div.disclosure-icon
     div.selected-item(:ref="'select'")
       p(v-if="model === ''") {{placeholder}}
       p(v-else) {{model}}
@@ -8,8 +9,6 @@
       div.items(v-if="open")
         div.item(v-for="item in items", @click="onSelect(item)")
           span {{item}}
-          
-
 </template>
 
 <script>
@@ -53,9 +52,11 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../theme.styl'
+
 .s-select
   height 60px
-  border-radius 2px
+  border-radius 4px
   border solid 1px #d6dae9
   outline none
   font-size 15px
@@ -105,6 +106,13 @@ export default {
       &:hover
         background-color #d6dae9
 
-
-
+  .disclosure-icon
+    position absolute
+    right 20px
+    pointer-events none // allows the disclosure to be 'clickable' because the thing behind it is clickable
+    width 0
+    height 0
+    border-left 5px solid transparent
+    border-right 5px solid transparent
+    border-top 6px solid select--color--disclosure
 </style>

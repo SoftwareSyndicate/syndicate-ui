@@ -9,7 +9,10 @@ div#checkbox-page
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
         s-checkbox(title="button", :classes='[size]')
-          
+      h3 States
+      div.component-container(v-for="state in states")
+        span {{state ? state : 'default'}}
+        s-checkbox(title="button", :classes='[state]') test
 </template>
 
 <script>
@@ -18,7 +21,8 @@ export default {
   name: 'CheckboxPage',
   data(){
     return {
-      sizes: ['xs', 's', '', 'l', 'xl'],
+      sizes: ['s', '', 'm'],
+      states: ['', 'active', 'disabled'],
     }
   },
 }
@@ -28,7 +32,7 @@ export default {
 #checkbox-page
   display flex
   flex-wrap wrap
-  
+
   .header
     flex-basis 100%
     border-bottom solid 1px black
@@ -38,7 +42,7 @@ export default {
     flex-basis 100%
     display flex
     flex-wrap wrap
-    
+
     .row
       flex-basis 100%
       display flex
@@ -54,5 +58,5 @@ export default {
 
         .s-checkbox
           margin-top 10px
-    
+
 </style>

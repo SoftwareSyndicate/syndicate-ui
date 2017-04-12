@@ -15,7 +15,9 @@ div#input-page
       div.component-container(v-for="theme in themes")
         span {{theme ? theme : 'default'}}
         s-input(title="button", :classes='[theme]')
-  
+      div.component-container
+        span disabled
+        s-input(title="button", disabled)
 </template>
 
 <script>
@@ -35,7 +37,7 @@ export default {
 #input-page
   display flex
   flex-wrap wrap
-  
+
   .header
     flex-basis 100%
     border-bottom solid 1px black
@@ -45,7 +47,7 @@ export default {
     flex-basis 100%
     display flex
     flex-wrap wrap
-    
+
     .row
       flex-basis 100%
       display flex
