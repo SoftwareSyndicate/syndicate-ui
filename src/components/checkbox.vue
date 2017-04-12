@@ -15,11 +15,13 @@ export default {
     return {
       active: false,
       disabled: false,
+
+      bannedClasses: ['active', 'disabled'],
     }
   },
   computed: {
     c_classes(){
-      let cls = this.classes.slice() // shallow copy the classes array
+      let cls = this.classes.filter(c => !this.bannedClasses.includes(c)) // shallow copy the classes array, removing bannedClasses
       // conditionally add other classes
       if(this.active){
         cls.push('active')
@@ -37,6 +39,11 @@ export default {
       return this.disabled || this.$refs.checkbox.classList.contains('disabled')
     }
   },
+  mounted(){
+    if(this.classes.includes('active') && !this.active){
+      this.active = true
+    }
+  },
   methods: {
     onclick(){
       if(this.isDisabled){
@@ -44,7 +51,7 @@ export default {
       }
       this.active = !this.active
       this.$emit('change',this.isActive)
-    }
+    },
   }
 }
 </script>
