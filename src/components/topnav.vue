@@ -1,10 +1,10 @@
 <template lang="pug">
-div.nav
+div.topnav
   div.nav-header
-    img.logo(alt="logo", :src="logo")
+    img.logo(alt="logo", :src="logo", @click="open = !open")
     span.brand {{brand}}
     
-  div.nav-items
+  div.nav-items(v-show="open")
     div.item-container(v-for="item in items")
       div.item-header
         h3 {{item.name}}
@@ -19,11 +19,15 @@ div.nav
 <script>
 
 export default {
-  name: 's-nav',
+  name: 's-topnav',
   props: {
     items: {
       type: Array,
       default: []
+    },
+    open: {
+      type: Boolean,
+      default: false
     },
     brand: {
       type: String,
@@ -31,9 +35,9 @@ export default {
     },
     logo: {
       type: String,
-      default: "http://www.clipartkid.com/images/141/transparent-peace-symbol-2-cnd-logo-wordpress-peacesymbol-org-ALtC6a-clipart.png"
+      default: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hidari_mitsudomoe.svg/388px-Hidari_mitsudomoe.svg.png"
     }
-  }
+  },
 }
 </script>
 
@@ -57,7 +61,7 @@ nav-item-box-shadow-active =  0 1px 0 0 #2f3a48
 nav-item-color-active =  #fff
 
   
-.nav
+.topnav
   width 100%
   height 100%
   background-color nav-background-color

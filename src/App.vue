@@ -1,7 +1,8 @@
 <template lang="pug">
 div#app
   div.nav-container
-    s-nav(:items="nav_items")
+    s-side-nav.desktop(:items="nav_items")
+    s-top-nav.mobile(:items="nav_items")
 
   div.content-container
     div.breadcrumbs-container
@@ -30,6 +31,18 @@ export default {
 
 <style lang="stylus">
 
+mobile = 600px
+desktop = 601px
+
+.mobile 
+  @media screen and (min-width: mobile)
+    display none
+
+.desktop 
+  @media screen and (max-width: desktop)
+    display none
+
+    
 body
   margin 0px
   height 100vh
@@ -39,17 +52,28 @@ body
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  height 100%
   display flex
   flex-wrap wrap
+  
+  @media screen and (min-width: desktop)
+    flex-wrap nowrap
+    height 100vh
 
   .nav-container
     display flex
-    flex-basis 15%  
+    flex-basis 100%
+
+    @media screen and (min-width: desktop)
+      flex-basis 15%
+
 
   .content-container
-    flex-basis 85%  
-    flex-wrap wrap  
+    flex-basis 100%
+    flex-wrap wrap
+
+    @media screen and (min-width: desktop)
+      flex-basis 85%  
+
     
     .breadcrumbs-container
       flex-basis 100%
