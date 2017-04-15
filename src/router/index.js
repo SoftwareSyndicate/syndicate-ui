@@ -9,13 +9,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'components',
-      redirect: '/typography' 
+      name: 'general',
+      redirect: '/general/layout' 
     },
     {
-      path: '/typography',
+      path: '/general/typography',
       name: 'typography',
       component: pages.TypographyPage,
+    },
+    {
+      path: '/general/layout',
+      name: 'layout',
+      component: pages.LayoutPage,
     },
     {
       path: '/components/button',

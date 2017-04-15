@@ -2,6 +2,24 @@
 const state = {
   nav_items: [
     {
+      name: "General",
+      sub_items: [
+        {
+          name: "Layout",
+          route: {
+            name: 'layout',
+          }
+        },
+
+        {
+          name: "Typography",
+          route: {
+            name: 'typography',
+          }
+        },
+      ]
+    },
+    {
       name: "Components",
       sub_items: [
         {
@@ -38,17 +56,6 @@ const state = {
           name: "Checkbox",
           route: {
             name: 'checkbox',
-          }
-        },
-      ]
-    },
-    {
-      name: "Typography",
-      sub_items: [
-        {
-          name: "All",
-          route: {
-            name: 'typography',
           }
         },
       ]

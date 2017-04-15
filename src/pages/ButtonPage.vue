@@ -4,13 +4,13 @@ div#button-page
     h1 Buttons
 
   div.body
-    div.row
+    div.row-flex-wrap
       h3 Sizes
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
         s-button(title="button", :classes='[size]')
 
-    div.row
+    div.row-flex-wrap
       h3 Themes
       div.component-container(v-for="theme in themes")
         span {{theme ? theme : 'default'}}
@@ -46,10 +46,7 @@ export default {
     display flex
     flex-wrap wrap
     
-    .row
-      flex-basis 100%
-      display flex
-      flex-wrap wrap
+    .row-flex-wrap
       margin-bottom 2em
 
       h3

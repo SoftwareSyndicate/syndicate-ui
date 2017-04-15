@@ -25,11 +25,14 @@ export default {
     crumbs: 'crumbs',
   }),
   created(){
+    console.log(this.$style)
   }
 }
 </script>
 
 <style lang="stylus">
+@import './typography.styl'
+@import './layout.styl'
 
 mobile = 600px
 desktop = 601px
@@ -48,10 +51,6 @@ body
   height 100vh
   
 #app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
   display flex
   flex-wrap wrap
   

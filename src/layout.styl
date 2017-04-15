@@ -1,0 +1,26 @@
+// Layout
+
+.row
+  flex-basis 100%
+  
+.row-flex
+  @extends .row
+  display flex
+    
+.row-flex-wrap
+  @extends .row-flex
+  flex-wrap wrap
+
+
+for percent in 1..100
+  .row-{percent}
+    flex-basis 1% * percent
+    
+  .row-flex-{percent}
+    flex-basis 1% * percent
+    display flex
+
+  .row-flex-wrap-{percent}
+    flex-basis 1% * percent 
+    display flex
+    flex-wrap wrap

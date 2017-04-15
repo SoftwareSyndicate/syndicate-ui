@@ -8,15 +8,7 @@ div.breadcrumbs
     slot(name="actions")
 </template>
 
-<script>
-export default {
-  name: 'BreadCrumbs',
-  props: ['crumbs'],
-}
-</script>
-
 <style lang="stylus" scoped>
-
 breadcrumbs-height = 60px;
 breadcrumbs-background-color = #fe5e3b
 breadcrumbs-color = #fff
@@ -50,3 +42,10 @@ breadcrumbs-color = #fff
     margin-right 1em
         
 </style>
+
+<script>
+export default {
+  name: 'BreadCrumbs',
+  props: ['crumbs'],
+}
+</script>
