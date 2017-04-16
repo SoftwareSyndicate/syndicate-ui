@@ -20,7 +20,7 @@ breadcrumbs-color = #fff
   flex-basis 100%
   padding-left 1em
   height breadcrumbs-height
-    
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.15);
   .crumbs
     display flex
     align-items center
