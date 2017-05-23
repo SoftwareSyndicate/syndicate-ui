@@ -2,54 +2,15 @@
   div.s-select(@click="open = !open")
     div.disclosure-icon
     div.selected-item(:ref="'select'")
-      p(v-if="model === ''") {{placeholder}}
+      p.placeholder(v-if="model === ''") {{placeholder}}
       p(v-else) {{model}}
 
     transition(name="open", mode="out-in")
       div.items(v-if="open")
-        div.item(v-for="item in items", @click="onSelect(item)")
-          span {{item}}
+        div.item(v-for="item in items", @click="change(item)")
+          span {{item.title}}
 </template>
 
-<script>
-export default {
-  name: 'Syndicate-Select',
-  props: {
-    placeholder: {
-      type: String,
-      default: ""
-    },
-    items: {
-      type: Array,
-      default: () => [],
-    },
-    type: {
-      type: String,
-      default: "text"
-    },
-    model: {
-      type: String,
-      default: ""
-    },
-    onSelect: {
-      type: Function,
-      default: () => {}
-    }
-  },
-  data() {
-    return {
-      open: false,
-    }
-  },
-  created() {
-    document.body.addEventListener('click', event => {
-      if(event.target != this.$refs.select){
-        this.open = false;
-      }
-    })
-  }
-}
-</script>
 
 <style lang="stylus" scoped>
 @import '../theme.styl'
@@ -68,6 +29,9 @@ export default {
   position relative
   cursor pointer
   user-select none
+
+  .placeholder
+    opacity .4
 
   .selected-item
     display flex
@@ -116,3 +80,44 @@ export default {
     border-right 5px solid transparent
     border-top 6px solid select--color--disclosure
 </style>
+
+
+<script>
+export default {
+  name: 'Syndicate-Select',
+  props: {
+    placeholder: {
+      type: String,
+      default: ""
+    },
+    items: {
+      type: Array,
+      default: () => [],
+    },
+    type: {
+      type: String,
+      default: "text"
+    },
+    model: {
+      type: String,
+      default: ""
+    },
+    change: {
+      type: Function,
+      default: () => {}
+    }
+  },
+  data() {
+    return {
+      open: false,
+    }
+  },
+  created() {
+    document.body.addEventListener('click', event => {
+      if(event.target != this.$refs.select && event.target.parentElement != this.$refs.select && event.target.parentElement.parentElement != this.$refs.select){
+        this.open = false;
+      }
+    })
+  }
+}
+</script>

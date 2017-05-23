@@ -1,10 +1,10 @@
 <template lang="pug">
 div.topnav
   div.nav-header
-    img.logo(alt="logo", :src="logo", @click="open = !open")
+    img.logo(alt="logo", :src="logo", @click="isOpen = !isOpen")
     span.brand {{brand}}
     
-  div.nav-items(v-show="open")
+  div.nav-items(v-show="isOpen")
     div.item-container(v-for="item in items")
       div.item-header
         h3 {{item.name}}
@@ -16,35 +16,8 @@ div.topnav
       
 </template>
 
-<script>
-
-export default {
-  name: 's-topnav',
-  props: {
-    items: {
-      type: Array,
-      default: []
-    },
-    open: {
-      type: Boolean,
-      default: false
-    },
-    brand: {
-      type: String,
-      default: "Brand"
-    },
-    logo: {
-      type: String,
-      default: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hidari_mitsudomoe.svg/388px-Hidari_mitsudomoe.svg.png"
-    }
-  },
-}
-</script>
-
 <style lang="stylus">
-  
 @import '../theme.styl'
-
 
 nav-height = 60px
 nav-header-background-color = #2f3a48
@@ -59,7 +32,6 @@ nav-item-color = rgba(236, 239, 249, 0.91)
 nav-item-background-color-active = #99a6cc
 nav-item-box-shadow-active =  0 1px 0 0 #2f3a48
 nav-item-color-active =  #fff
-
   
 .topnav
   width 100%
@@ -141,3 +113,31 @@ nav-item-color-active =  #fff
     
 </style>
                                       
+<script>
+export default {
+  name: 's-topnav',
+  props: {
+    items: {
+      type: Array,
+      default: []
+    },
+    open: {
+      type: Boolean,
+      default: false
+    },
+    brand: {
+      type: String,
+      default: "Brand"
+    },
+    logo: {
+      type: String,
+      default: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Hidari_mitsudomoe.svg/388px-Hidari_mitsudomoe.svg.png"
+    }
+  },
+  data(){
+    return {
+      isOpen: this.open
+    }
+  }
+}
+</script>

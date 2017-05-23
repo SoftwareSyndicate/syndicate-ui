@@ -6,7 +6,7 @@ div.sidenav
     
   div.nav-items
     div.item-container(v-for="item in items")
-      div.item-header
+      div.item-header(v-if="item.name")
         h3 {{item.name}}
       
       div.sub-item-container(v-for="sub_item in item.sub_items")

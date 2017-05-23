@@ -1,27 +1,7 @@
 <template lang="pug">
-  div.s-button(@click="onclick()", :class="classes")
+  div.s-button(@click="onclick(value)", :class="classes")
     span {{title}}
 </template>
-
-<script>
-export default {
-  name: 's-button',
-  props: {
-    title: {
-      type: String,
-      default: "button"
-    },
-    classes: {
-      type: Array,
-      default: () => []
-    },
-    onclick: {
-      type: Function,
-      default: () => {} 
-    }
-  },
-}
-</script>
 
 <style lang="stylus">
 @import '../theme.styl'
@@ -113,8 +93,27 @@ export default {
     &:active
       background-color darken(tertiary-background-color, 8%)
 
-
-
-          
 </style>
                                     
+
+<script>
+export default {
+  name: 's-button',
+  props: {
+    title: {
+      type: String,
+      default: "button"
+    },
+    classes: {
+      type: Array,
+      default: () => []
+    },
+    onclick: {
+      type: Function,
+      default: () => {} 
+    },
+    value: {}
+  },
+}
+</script>
+

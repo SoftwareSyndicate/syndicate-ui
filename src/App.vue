@@ -79,7 +79,6 @@ body
 
     .view-container
       flex-basis 100%
-      padding 1em
 
       .fade-enter-active, .fade-leave-active
         transition all .2s ease

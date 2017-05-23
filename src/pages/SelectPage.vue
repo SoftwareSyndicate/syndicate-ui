@@ -8,13 +8,13 @@ div#select-page
       h3 Sizes
       div.component-container(v-for="size in sizes")
         span {{size ? size : 'default'}}
-        s-select(:classes='[size]', :items="items")
+        s-select(:classes='[size]', :items="items", :model="model", placeholder="placeholder", :change="onSelect")
 
     div.row
       h3 Themes
       div.component-container(v-for="theme in themes")
         span {{theme ? theme : 'default'}}
-        s-select(:classes='[theme]', :items="items")
+        s-select(:classes='[theme]', :items="items", :model="model", placeholder="placeholder", :change="onSelect")
 </template>
 
 <script>
@@ -23,9 +23,32 @@ export default {
   name: 'SelectPage',
   data(){
     return {
+      model: "",
       sizes: ['xs', 's', '', 'l', 'xl'],
       themes: ['', 'primary', 'positive', 'negative', 'warning'],
-      items: ['item 1', 'item 2', 'another item']
+      items: [
+        {
+          title: "item 1",
+          value: "value 1",
+        },
+        {
+          title: "item 2",
+          value: "value 2",
+        },
+        {
+          title: "item 3",
+          value: "value 3",
+        },
+        {
+          title: "item 4",
+          value: "value 4",
+        },
+      ]
+    }
+  },
+  methods: {
+    onSelect(item){
+      this.model = item.value;
     }
   }
 }
