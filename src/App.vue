@@ -31,64 +31,61 @@ export default {
 </script>
 
 <style lang="stylus">
-@import './typography.styl'
-@import './layout.styl'
+@import './style/main.styl'
 
-mobile = 600px
-desktop = 601px
+// mobile = 600px
+// desktop = 601px
 
-.mobile 
-  @media screen and (min-width: mobile)
-    display none
 
-.desktop 
-  @media screen and (max-width: desktop)
-    display none
+// .mobile 
+//   @media screen and (min-width: mobile)
+//     display none
+
+// .desktop 
+//   @media screen and (max-width: desktop)
+//     display none
+
 
     
-body
-  margin 0px
-  height 100vh
+// body
+//   margin 0px
+//   height 100vh
   
-#app
-  display flex
-  flex-wrap wrap
+// #app
+//   display flex
+//   flex-wrap wrap
   
-  @media screen and (min-width: desktop)
-    flex-wrap nowrap
-    height 100vh
+//   @media screen and (min-width: desktop)
+//     flex-wrap nowrap
+//     height 100vh
 
-  .nav-container
-    display flex
-    flex-basis 100%
+//   .nav-container
+//     display flex
+//     flex-basis 100%
 
-    @media screen and (min-width: desktop)
-      flex-basis 15%
+//     @media screen and (min-width: desktop)
+//       flex-basis 15%
 
 
-  .content-container
-    flex-basis 100%
-    flex-wrap wrap
+//   .content-container
+//     flex-basis 100%
+//     flex-wrap wrap
 
-    @media screen and (min-width: desktop)
-      flex-basis 85%  
+//     @media screen and (min-width: desktop)
+//       flex-basis 85%  
 
     
-    .breadcrumbs-container
-      flex-basis 100%
+//     .breadcrumbs-container
+//       flex-basis 100%
 
-    .view-container
-      flex-basis 100%
+//     .view-container
+//       flex-basis 100%
 
-      .fade-enter-active, .fade-leave-active
-        transition all .2s ease
+//       .fade-enter-active, .fade-leave-active
+//         transition all .2s ease
 
-      .fade-enter, .fade-leave-active
-        opacity 0
+//       .fade-enter, .fade-leave-active
+//         opacity 0
 
       
-h1, h2, h3, h4, h5, h6
-  margin 0px
-  font-weight normal
-
 </style>

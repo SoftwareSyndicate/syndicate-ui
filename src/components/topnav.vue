@@ -17,7 +17,7 @@ div.topnav
 </template>
 
 <style lang="stylus">
-@import '../theme.styl'
+@import '../style/theme.styl'
 
 nav-height = 60px
 nav-header-background-color = #2f3a48

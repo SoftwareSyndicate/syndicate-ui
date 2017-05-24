@@ -39,7 +39,7 @@ export default {
 
 <style lang="stylus">
   
-@import '../theme.styl'
+@import '../style/theme.styl'
 
 
 nav-height = 60px

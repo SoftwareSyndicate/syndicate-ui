@@ -39,7 +39,7 @@ export default {
 
 <style lang="stylus">
 
-@import '../theme.styl'
+@import '../style/theme.styl'
 
 .s-input
   border-radius 4px

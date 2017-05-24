@@ -13,7 +13,7 @@
 
 
 <style lang="stylus" scoped>
-@import '../theme.styl'
+@import '../style/theme.styl'
 
 .s-select
   height 60px

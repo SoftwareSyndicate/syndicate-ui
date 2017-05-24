@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import '../theme.styl'
+@import '../style/theme.styl'
   
 .s-tag
   outline none

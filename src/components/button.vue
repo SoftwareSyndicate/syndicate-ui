@@ -4,7 +4,7 @@
 </template>
 
 <style lang="stylus">
-@import '../theme.styl'
+@import '../style/theme.styl'
   
 .s-button
   cursor pointer
