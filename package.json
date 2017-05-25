@@ -19,7 +19,7 @@
   "files": [
     "dist/",
     "src/",
-    "README.md",
+    "README.md"
   ],
   "devDependencies": {
     "babel-core": "^6.0.0",
