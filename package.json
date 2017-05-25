@@ -16,6 +16,11 @@
   },
   "main": "dist/build.js",
   "module": "src/module.js",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+  ],
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
