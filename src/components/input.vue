@@ -1,5 +1,5 @@
 <template lang="pug">
-input.s-input(:placeholder="placeholder",  :type="type", :value="model", @input="change", :name='name', :class="classes")
+  input.s-input(:placeholder="placeholder",  :type="type", :value="value", @input="onInput($event.target.value)", :name='name', :class="classes")
 </template>
 
 <script>
@@ -14,7 +14,7 @@ export default {
       type: String,
       default: "text"
     },
-    model: {
+    value: {
       type: String,
       default: ""
     },
@@ -34,6 +34,11 @@ export default {
   created(){
 
   },
+  methods: {
+    onInput(value){
+      this.$emit('input', value)
+    }
+  }
 }
 </script>
 
